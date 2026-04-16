@@ -16,7 +16,7 @@ const Authcontext = createContext();
                 <>
                 <h3>Wellcome {user}</h3>
                 <button onClick={()=>setUser(null)}>
-                    Logout
+                    GetOut
                 </button>
                 </>
             ):(
