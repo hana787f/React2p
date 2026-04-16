@@ -1,11 +1,11 @@
 import React, { useReducer, useState } from "react";
 
-// Initial State
+
 const initialState = {
   todos: []
 };
 
-// Reducer Function
+
 function reducer(state, action) {
   switch (action.type) {
     case "ADD":
@@ -36,7 +36,7 @@ function reducer(state, action) {
   const [input, setInput] = useState("");
   const [editId, setEditId] = useState(null);
 
-  // Add or Update Todo
+  
   const handleSubmit = () => {
     if (!input.trim()) return;
 
@@ -56,7 +56,7 @@ function reducer(state, action) {
     setInput("");
   };
 
-  // Set Edit Mode
+  
   const handleEdit = (todo) => {
     setInput(todo.text);
     setEditId(todo.id);
