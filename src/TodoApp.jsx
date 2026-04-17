@@ -1,36 +1,30 @@
 import React, { useReducer, useState } from "react";
 
-
-const initialState = {
-  todos: []
-};
-
-
-function reducer(state, action) {
-  switch (action.type) {
-    case "ADD":
-      return {
-        todos: [...state.todos, { id: Date.now(), text: action.payload }]
-      };
-
-    case "DELETE":
-      return {
-        todos: state.todos.filter((todo) => todo.id !== action.payload)
-      };
-
-    case "EDIT":
-      return {
-        todos: state.todos.map((todo) =>
-          todo.id === action.payload.id
-            ? { ...todo, text: action.payload.text }
-            : todo
-        )
-      };
-
-    default:
-      return state;
+ const initialState ={
+  todos:[]
+ }
+  function reducer(state,action){
+    switch(action.type){
+      case "ADD":
+        return{
+          todos:[...state.todos,{ id:Date.now(),text:action.payload}]
+        }
+        case"DELETE":
+        return{
+          todos:state.todos.filter((todo) => todo.id !==action.payload)
+        }
+        case "EDIT":
+          return{
+            todos:state.todos.map((todo)=>todo.id === action.payload.id
+            ?{...todo,text:action.payload.text}:todo )
+          }
+        default:
+          return state;  
+        
+    }
   }
-}
+
+
  function TodoApp() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const [input, setInput] = useState("");
