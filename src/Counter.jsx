@@ -26,8 +26,7 @@ function Counter() {
         Increment
       </button>
 
-      <button onClick={() => dispatch({ type: "DECREMENT" })}
-         disabled={state.count ===0}>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>
         Decrement
       </button>
 
