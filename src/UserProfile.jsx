@@ -14,13 +14,16 @@ function Navbar(){
  function Profile(){
     const {user,setUser}=useContext(userContext);
     const changeName =()=>{
-        setUser({ ...user ,name:"Hana Fathima"});
+        setUser({ ...user ,name:"Hana Fathima",
+                              email: "newhana@gmail.com",age:22
+        });
     }
      return(
         <div>
             <h2> profile page </h2>
             <p>Name:{ user.name }</p>
             <p>Email:{user.email}</p>
+            <p>Age:{user.age}</p>
 
             <button onClick={changeName}>
                 change Name 
@@ -32,7 +35,8 @@ function Navbar(){
   function UserProfile(){
      const[user,setUser]=useState({
         name:"Hana",
-        email:"hana@gmail.com"
+        email:"hana@gmail.com",
+        age:21
      });
      return(
         <userContext.Provider value={{user,setUser}}>
